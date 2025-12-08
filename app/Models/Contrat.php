@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Contrat extends Model
 {
     use HasFactory;
@@ -15,4 +16,12 @@ class Contrat extends Model
         'montant',
         'etat_contrat',
     ];
+
+    /**
+     * Relation avec l'utilisateur (assurez-vous que le modèle User existe).
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

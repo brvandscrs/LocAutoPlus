@@ -19,7 +19,7 @@
                         {{ __('Utilisateurs') }}
                     </x-nav-link>
                     <x-nav-link :href="route('contrats.index')" :active="request()->routeIs('contrats.index')">
-                        {{ __('contrats') }}
+                        {{ __('Contrats') }}
                     </x-nav-link>
                 </div>
             </div>
