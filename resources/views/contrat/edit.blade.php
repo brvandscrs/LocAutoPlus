@@ -14,8 +14,9 @@
         </div>
     @endif
 
-    <form action="{{ route('contrat.update') }}" method="PUT">
+    <form action="{{ route('contrats.update', ['contrat' => $contrat->id]) }}" method="POST">
         @csrf
+        @method("PUT")
 
         <div class="form-group">
             <label for="date_debut">Date de Début :</label>
@@ -38,7 +39,7 @@
         </div>
 
         <button type="submit" class="btn btn-success mt-3">Modifier</button>
-        <a href="{{ route('contrat.index') }}" class="btn btn-secondary mt-3">Annuler</a>
+        <a href="{{ route('contrats.index') }}" class="btn btn-secondary mt-3">Annuler</a>
     </form>
 </div>
 @endsection

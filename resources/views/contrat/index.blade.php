@@ -4,7 +4,7 @@
 <div class="container">
     <h1>Liste des Contrats</h1>
 
-    <a href="{{ route('contrat.create') }}" class="btn btn-primary mb-3">
+    <a href="{{ route('contrats.create') }}" class="btn btn-primary mb-3">
         Nouveau Contrat
     </a>
 
@@ -32,9 +32,9 @@
                 <td>{{ number_format($contrat->montant, 2, ',', ' ') }} €</td>
                 <td>{{ $contrat->etat_contrat }}</td>
                 <td>
-                    <form action="{{ route('contrat.destroy', $contrat->id) }}" method="POST">
+                    <form action="{{ route('contrats.destroy', $contrat->id) }}" method="POST">
 
-                        <a class="btn btn-info btn-sm" href="{{ route('contrat.edit', $contrat->id) }}">
+                        <a class="btn btn-info btn-sm" href="{{ route('contrats.edit', $contrat->id) }}">
                             Modifier
                         </a>
 

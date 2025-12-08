@@ -50,7 +50,7 @@ class ContratController extends Controller
         ]);
 
         // 3. Redirection avec un message de succès
-        return redirect()->route('contrat.index')
+        return redirect()->route('contrats.index')
                         ->with('success', 'Contrat créé avec succès.');
     }
 
@@ -87,7 +87,7 @@ class ContratController extends Controller
         $contrat->update($request->all());
 
         // 3. Redirection
-        return redirect()->route('contrat.index')
+        return redirect()->route('contrats.index')
                         ->with('success', 'Contrat mis à jour avec succès.');
     }
 
@@ -100,7 +100,7 @@ class ContratController extends Controller
         $contrat->delete();
 
         // Redirection
-        return redirect()->route('contrat.index')
+        return redirect()->route('contrats.index')
                         ->with('success', 'Contrat supprimé avec succès.');
     }
 }
