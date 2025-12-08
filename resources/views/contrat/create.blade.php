@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form action="{{ route('contrats.store') }}" method="POST">
+    <form action="{{ route('contrat.store') }}" method="POST">
         @csrf
 
         <div class="form-group">
@@ -38,7 +38,7 @@
         </div>
 
         <button type="submit" class="btn btn-success mt-3">Créer</button>
-        <a href="{{ route('contrats.index') }}" class="btn btn-secondary mt-3">Annuler</a>
+        <a href="{{ route('contrat.index') }}" class="btn btn-secondary mt-3">Annuler</a>
     </form>
 </div>
 @endsection
