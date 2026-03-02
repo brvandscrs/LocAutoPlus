@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Contrat;
 
 
 class ContratController extends Controller
@@ -13,8 +14,9 @@ class ContratController extends Controller
      */
     public function index()
     {
-        $posts = Contrat::all();
-        return ContratResource::collection($posts);
+        $contrats = Contrat::all();
+        // return ContratResource::collection($contrats);
+        return response()->json($contrats);
     }
 
     /**
@@ -49,9 +51,9 @@ class ContratController extends Controller
             'title' => 'sometimes|required|string|max:255',
             'content' => 'sometimes|required|string',
         ]);
-        $post = Post::findOrFail($id);
+        $contrat = Post::findOrFail($id);
         if ($request->has('title')) {
-            $post->slug = Str::slug($request->title);
+            $contrat->slug = Str::slug($request->title);
         }
         $post->update($validated);
         return response()->json(['message' => 'Post updated successfully']);
