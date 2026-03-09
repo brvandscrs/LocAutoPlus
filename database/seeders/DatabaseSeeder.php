@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory(20)->create();
         Contrat::factory(20)->create();
+
+        $this->call(VehiculesSeeder::class);
     }
 }
