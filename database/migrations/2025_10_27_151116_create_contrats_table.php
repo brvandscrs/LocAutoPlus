@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('contrats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('restrict');
+            $table->foreignId('vehicule_id')->constrained()->onDelete('restrict');
             $table->date('date_debut');
             $table->date('date_fin');
             $table->decimal('montant', 10, 2);
