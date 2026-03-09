@@ -18,7 +18,9 @@ return new class extends Migration
             $table->int('nb_portes');
             $table->int('nb_places');
             $table->string('type_boite_vitesse');
-            $table->decimal('prix_journalier', 6, 2);
+            $table->decimal('prix_journalier', 7, 2);
+            $table->string('image_url');
+            $table->int('age_minimum');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
