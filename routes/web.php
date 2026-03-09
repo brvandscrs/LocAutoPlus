@@ -4,13 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContratController;
+use App\Http\Controllers\VehiculeController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::resource('contrats', ContratController::class);
 Route::resource('users', UserController::class);
+Route::Resource('vehicules', VehiculesController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
