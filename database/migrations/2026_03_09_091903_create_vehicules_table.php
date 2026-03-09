@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('vehicules', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('immatriculation');
+            $table->string('motorisation');
+            $table->int('nb_portes');
+            $table->int('nb_places');
+            $table->string('type_boite_vitesse');
+            $table->decimal('prix_journalier', 6, 2);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
