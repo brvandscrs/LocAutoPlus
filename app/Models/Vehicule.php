@@ -12,10 +12,14 @@ class Vehicule extends Model
 
     protected $fillable = [
         'immatriculation',
+        'marque',
+        'modele',
         'motorisation',
-        'nb_porte',
-        'nb_place',
+        'nb_portes',
+        'nb_places',
         'type_boite_vitesse',
         'prix_journalier',
+        'image_url',
+        'age_minimum',
     ];
 }
