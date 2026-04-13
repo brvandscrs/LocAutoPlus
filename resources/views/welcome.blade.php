@@ -52,7 +52,19 @@
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
                 <div class="ReservForm">
-                    Test
+                    <form action="/reservation" method="POST" style="border: 1px solid black; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+                        @csrf
+                        <h2>Réservation</h2>
+                        <div>
+                            <input type="date" name="datedebut" id="datedebut">
+                            <input type="time" name="heuredebut" id="heuredebut">
+                        </div>
+                        <div>
+                            <input type="date" name="datefin" id="datefin">
+                            <input type="time" name="heurefin" id="heurefin">
+                        </div>
+                        <button type="submit">Choisir un véhicule</button>
+                    </form>
                 </div>
             </main>
         </div>

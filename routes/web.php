@@ -10,6 +10,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/reservation', function () {
+    return view('reservation');
+})->name('reservation');
+
+Route::post('/reservation', function () {
+    return view('reservation');
+})->name('reservation');
+
 Route::resource('contrats', ContratController::class);
 Route::resource('users', UserController::class);
 Route::Resource('vehicules', VehiculesController::class);
