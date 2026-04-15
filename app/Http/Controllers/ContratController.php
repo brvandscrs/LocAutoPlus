@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contrat;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Contrat;
 
 class ContratController extends Controller
 {
@@ -17,7 +17,7 @@ class ContratController extends Controller
         $contrats = Contrat::latest()->get(); 
 
         // Passe les contrats à la vue 'contrats.index'
-        return view('contrat.index', compact('contrats'));
+        return view('contrat', compact('contrats'));
     }
 
     /**

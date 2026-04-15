@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\Models\Vehicule;
 
 class VehiculeController extends Controller
 {
@@ -11,7 +13,9 @@ class VehiculeController extends Controller
      */
     public function index()
     {
-        //
+        // retourner la vue des véhicules par ordre alphabétique croissante des marques puis modèles de marques
+        $vehicules = Vehicule::orderBy('marque')->orderBy('modele')->get();
+        return view('vehicule', compact('vehicules'));
     }
 
     /**

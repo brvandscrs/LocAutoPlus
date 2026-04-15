@@ -10,6 +10,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contrats', function () {
+    return view('contrats');
+})->name('contrats');
+
 Route::get('/reservation', function () {
     return view('reservation');
 })->name('reservation');
@@ -18,9 +22,13 @@ Route::post('/reservation', function () {
     return view('reservation');
 })->name('reservation');
 
+Route::get('/vehicules', function () {
+    return view('vehicules');
+})->name('vehicules');
+
 Route::resource('contrats', ContratController::class);
 Route::resource('users', UserController::class);
-Route::Resource('vehicules', VehiculesController::class);
+Route::Resource('vehicules', VehiculeController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
