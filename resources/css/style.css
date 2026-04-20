@@ -1,0 +1,12 @@
+.vehicules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 20px;
+}
+
+.vehicule {
+    flex: 0 0 calc(33.333% - 0.667rem); /* 0 0 = ne grandit pas, ne rétrécit pas */
+    border: dotted 1px grey;
+    padding: 1rem;
+}
