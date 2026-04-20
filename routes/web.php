@@ -18,9 +18,7 @@ Route::get('/reservation', function () {
     return view('reservation');
 })->name('reservation');
 
-Route::post('/reservation', function () {
-    return view('reservation');
-})->name('reservation');
+Route::post('/reservation', [ReservationController::class, 'index'])->name('reserver');
 
 // Route::get('/vehicules', function () {
 //     return view('vehicules');
