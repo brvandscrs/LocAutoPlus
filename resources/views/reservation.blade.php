@@ -26,7 +26,6 @@
                     <p>Âge minimum requis : {{ $vehicule->age_minimum }} ans</p>
                     <p>Prix journalier : {{ $vehicule->prix_journalier }}€</p>
                 </div>
-                test
             @endforeach
         </div>
     </form>
