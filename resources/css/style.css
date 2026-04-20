@@ -1,3 +1,4 @@
+/* Grille de véhicules pour la page de réservation */
 .vehicules {
     display: flex;
     flex-wrap: wrap;
@@ -5,8 +6,21 @@
     padding-top: 20px;
 }
 
+/* Carte pour chaque véhicule */
 .vehicule {
     flex: 0 0 calc(33.333% - 0.667rem); /* 0 0 = ne grandit pas, ne rétrécit pas */
     border: dotted 1px grey;
     padding: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .vehicule {
+        flex: 0 0 calc(50% - 0.667rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .vehicule {
+        flex: 0 0 100%;
+    }
 }
