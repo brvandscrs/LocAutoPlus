@@ -22,9 +22,9 @@ Route::post('/reservation', function () {
     return view('reservation');
 })->name('reservation');
 
-Route::get('/vehicules', function () {
-    return view('vehicules');
-})->name('vehicules');
+// Route::get('/vehicules', function () {
+//     return view('vehicules');
+// })->name('vehicules');
 
 Route::resource('contrats', ContratController::class);
 Route::resource('users', UserController::class);

@@ -1,8 +1,9 @@
 <x-guest-layout>
     <form action="/reservation" method="POST">
         @csrf
-        <div style="border: 1px solid black; padding: 20px; display: flex; flex-direction: row; gap: 10px;">
             <h2>Réservation</h2>
+        <div style="border: 1px solid black; padding: 20px; display: flex; flex-direction: row; gap: 10px;">
+
             <div>
                 Départ :
                 <input type="date" name="datedebut" id="datedebut">

@@ -14,8 +14,10 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div>
+    
+    <!-- <body class="font-sans text-gray-900 antialiased"> -->
+    <body style="border: solid 1px red;" class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">        
+        <div style="border: solid 1px red;"  class="flex w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             {{ $slot }}
         </div>
     </body>

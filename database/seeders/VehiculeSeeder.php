@@ -4,11 +4,14 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Vehicule;
 
 class VehiculeSeeder extends Seeder
 {
     public function run(): void
     {
+        //Vehicule::factory(20)->create();
+        
         $vehicules = [
             [
                 'immatriculation' => 'AB-123-CD',
@@ -251,6 +254,7 @@ class VehiculeSeeder extends Seeder
                 'age_minimum'     => 25,
             ],
         ];
+        
 
         DB::table('vehicules')->insert($vehicules);
     }
