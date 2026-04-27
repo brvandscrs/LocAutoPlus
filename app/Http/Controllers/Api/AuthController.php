@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -19,9 +19,10 @@ class AuthController extends Controller
 
         // Vérification si l'utilisateur existe
         $user = User::where('email', $request->email)->first();
-        if (user) {
+        if ($user) {
             // Ici, le user existe, 
-            if ($user.is_admin) {
+            if ($user->is_admin) {
+                // Si l'utilisateur est un admin, on vérifie le mot de passe
                 if (password_verify($request->password, $user->password)) {
                     $token = $user->createToken('auth_token')->plainTextToken;
                     return response()->json([
