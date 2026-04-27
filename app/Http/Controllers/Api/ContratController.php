@@ -14,6 +14,7 @@ class ContratController extends Controller
      */
     public function index()
     {
+        dd('ContratController@index called'); // dump and die
         $contrats = Contrat::all();
         // return ContratResource::collection($contrats);
         return response()->json($contrats);

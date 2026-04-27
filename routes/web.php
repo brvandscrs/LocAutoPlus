@@ -11,9 +11,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contrats', function () {
-    return view('contrats');
-})->name('contrats');
+// Route::get('/contrats', function () {
+//     return view('contrats');
+// })->name('contrats');
 
 Route::get('/reservation', function () {
     return view('reservation');
