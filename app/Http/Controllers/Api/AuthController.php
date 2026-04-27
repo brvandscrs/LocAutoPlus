@@ -23,7 +23,7 @@ class AuthController extends Controller
             // Ici, le user existe, 
             if ($user.is_admin) {
                 if (password_verify($request->password, $user->password)) {
-                    $token = $user->createToken('auth_token')->plainTextToken
+                    $token = $user->createToken('auth_token')->plainTextToken;
                     return response()->json([
                         'access_token' => $token,
                         'token_type' => 'Bearer',
