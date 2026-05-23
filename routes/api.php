@@ -59,5 +59,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch ('/employes/{id}/actif',[EmployeApiController::class, 'toggleActif']);
     Route::delete('/employes/{id}',      [EmployeApiController::class, 'destroy']);
 
-    // Route::middleware('throttle:5,1')->post('/employes/login', [AuthEmployeController::class, 'login']);
+    Route::middleware('throttle:5,1')->post('/employes/login', [AuthEmployeController::class, 'login']);
 });
