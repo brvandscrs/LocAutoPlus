@@ -12,7 +12,7 @@ use App\Http\Controllers\Api\ContratListApiController;
 use App\Http\Controllers\Api\EmployeApiController;
 
 // ── Public ───────────────────────────────────────────────────────
-Route::post('/employes/login', [AuthEmployeController::class, 'login']);
+Route::middleware('throttle:5,1')->post('/employes/login', [AuthEmployeController::class, 'login']);
 
 // ── Protégées par Sanctum ────────────────────────────────────────
 Route::middleware('auth:sanctum')->group(function () {
@@ -58,6 +58,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put   ('/employes/{id}',      [EmployeApiController::class, 'update']);
     Route::patch ('/employes/{id}/actif',[EmployeApiController::class, 'toggleActif']);
     Route::delete('/employes/{id}',      [EmployeApiController::class, 'destroy']);
-
-    Route::middleware('throttle:5,1')->post('/employes/login', [AuthEmployeController::class, 'login']);
 });
