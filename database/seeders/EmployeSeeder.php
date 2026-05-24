@@ -16,8 +16,8 @@ class EmployeSeeder extends Seeder
     {
         $employes = [
             [
-                'nom'      => 'Dupont',
-                'prenom'   => 'Marie',
+                'nom'      => 'Descours',
+                'prenom'   => 'Bryan',
                 'email'    => 'admin@locautoplus.fr',
                 'password' => Hash::make('Admin1234!'),
                 'role'     => 'admin',
