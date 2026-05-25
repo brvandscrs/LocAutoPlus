@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string('prenom')->after('name');
             $table->string('telephone')->nullable()->after('prenom');
             $table->text('adresse')->nullable()->after('telephone');
+            $table->string('code_postal', 10)->nullable();
+            $table->string('ville', 100)->nullable();
             $table->date('date_naissance')->nullable()->after('adresse');
             $table->renameColumn('name', 'nom');
         });

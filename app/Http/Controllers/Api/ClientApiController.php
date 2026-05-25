@@ -40,6 +40,8 @@ class ClientApiController extends Controller
             'password'       => 'required|min:8',
             'telephone'      => 'nullable|string|max:20',
             'adresse'        => 'nullable|string',
+            'code_postal'     => 'nullable|string|max:10',
+            'ville'          => 'nullable|string|max:100',
             'date_naissance' => 'nullable|date',
         ]);
 
@@ -50,6 +52,8 @@ class ClientApiController extends Controller
             'password'       => Hash::make($request->password),
             'telephone'      => $request->telephone,
             'adresse'        => $request->adresse,
+            'code_postal'     => $request->code_postal,
+            'ville'          => $request->ville,
             'date_naissance' => $request->date_naissance,
         ]);
 
@@ -66,6 +70,8 @@ class ClientApiController extends Controller
             'email'          => 'required|email|unique:users,email,' . $id,
             'telephone'      => 'nullable|string|max:20',
             'adresse'        => 'nullable|string',
+            'code_postal'     => 'nullable|string|max:10',
+            'ville'          => 'nullable|string|max:100',
             'date_naissance' => 'nullable|date',
         ]);
 
@@ -75,6 +81,8 @@ class ClientApiController extends Controller
             'email'          => $request->email,
             'telephone'      => $request->telephone,
             'adresse'        => $request->adresse,
+            'code_postal'     => $request->code_postal,
+            'ville'          => $request->ville,
             'date_naissance' => $request->date_naissance,
         ]);
 
@@ -108,6 +116,8 @@ class ClientApiController extends Controller
             'email'          => $u->email,
             'telephone'      => $u->telephone ?? '—',
             'adresse'        => $u->adresse ?? '—',
+            'code_postal'     => $u->code_postal ?? '—',
+            'ville'          => $u->ville ?? '—',
             'date_naissance' => $u->date_naissance?->format('d/m/Y') ?? '—',
             'date_inscription'=> $u->created_at->format('d/m/Y'),
             'nb_contrats'    => $u->contrats_count ?? $u->contrats()->count(),
