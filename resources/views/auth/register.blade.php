@@ -56,7 +56,20 @@
             </div>
             <div class="form-group">
                 <label>Adresse <span style="color:var(--gris);font-weight:300">(optionnel)</span></label>
-                <input type="text" name="adresse" value="{{ old('adresse') }}" placeholder="12 rue des Lilas, 30000 Nîmes">
+                <input type="text" name="adresse" value="{{ old('adresse') }}" placeholder="12 rue des Lilas">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Code postal <span style="color:var(--gris);font-weight:300">(optionnel)</span></label>
+                    <input type="text" name="code_postal" value="{{ old('code_postal') }}"
+                        placeholder="30000" maxlength="10">
+                    @error('code_postal') <div class="form-error">{{ $message }}</div> @enderror
+                </div>
+                <div class="form-group">
+                    <label>Ville <span style="color:var(--gris);font-weight:300">(optionnel)</span></label>
+                    <input type="text" name="ville" value="{{ old('ville') }}" placeholder="Nîmes">
+                    @error('ville') <div class="form-error">{{ $message }}</div> @enderror
+                </div>
             </div>
             <div class="form-group">
                 <label>Date de naissance <span style="color:var(--gris);font-weight:300">(optionnel)</span></label>

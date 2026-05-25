@@ -24,6 +24,8 @@ class RegisterController extends Controller
             'password'       => 'required|min:8|confirmed',
             'telephone'      => 'nullable|string|max:20',
             'adresse'        => 'nullable|string',
+            'code_postal'    => 'nullable|string|max:10',
+            'ville'          => 'nullable|string|max:100',
             'date_naissance' => 'nullable|date|before:today',
         ]);
 
@@ -34,6 +36,8 @@ class RegisterController extends Controller
             'password'       => Hash::make($request->password),
             'telephone'      => $request->telephone,
             'adresse'        => $request->adresse,
+            'code_postal'    => $request->code_postal,
+            'ville'          => $request->ville,
             'date_naissance' => $request->date_naissance,
         ]);
 
