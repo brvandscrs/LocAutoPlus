@@ -20,7 +20,7 @@ class ReservationController extends Controller
     public function store(Request $request, $id)
     {
         $request->validate([
-            'date_debut'     => 'required|date|after_or_equal:today',
+            'date_debut'      => 'required|date|after_or_equal:today',
             'date_fin_prevue' => 'required|date|after:date_debut',
         ]);
 

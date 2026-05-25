@@ -128,13 +128,13 @@ class EmployeApiController extends Controller
     private function formatEmploye(Employe $e): array
     {
         return [
-            'id'           => $e->id,
-            'nom'          => $e->nom,
-            'prenom'       => $e->prenom,
-            'email'        => $e->email,
-            'role'         => $e->role,
-            'actif'        => $e->actif,
-            'date_creation'=> $e->created_at->format('d/m/Y'),
+            'id'            => $e->id,
+            'nom'           => $e->nom,
+            'prenom'        => $e->prenom,
+            'email'         => $e->email,
+            'role'          => $e->role,
+            'actif'         => $e->actif,
+            'date_creation' => $e->created_at->format('d/m/Y'),
         ];
     }
 }

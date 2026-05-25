@@ -37,12 +37,12 @@ class DashboardApiController extends Controller
             ]);
 
         return response()->json([
-            'nb_clients'          => User::count(),
-            'nb_contrats_en_cours'=> Contrat::whereIn('statut', ['en_attente','confirmee','en_cours'])->count(),
-            'nb_vehicules_dispos' => Vehicule::where('statut', 'disponible')->count(),
-            'nb_membres_club'     => ClubMembre::where('actif', true)->count(),
-            'derniers_contrats'   => $derniersContrats,
-            'vehicules_loues'     => $vehiculesLoues,
+            'nb_clients'           => User::count(),
+            'nb_contrats_en_cours' => Contrat::whereIn('statut', ['en_attente','confirmee','en_cours'])->count(),
+            'nb_vehicules_dispos'  => Vehicule::where('statut', 'disponible')->count(),
+            'nb_membres_club'      => ClubMembre::where('actif', true)->count(),
+            'derniers_contrats'    => $derniersContrats,
+            'vehicules_loues'      => $vehiculesLoues,
         ]);
     }
 }

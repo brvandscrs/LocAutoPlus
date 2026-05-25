@@ -40,7 +40,7 @@ class ClientApiController extends Controller
             'password'       => 'required|min:8',
             'telephone'      => 'nullable|string|max:20',
             'adresse'        => 'nullable|string',
-            'code_postal'     => 'nullable|string|max:10',
+            'code_postal'    => 'nullable|string|max:10',
             'ville'          => 'nullable|string|max:100',
             'date_naissance' => 'nullable|date',
         ]);
@@ -52,7 +52,7 @@ class ClientApiController extends Controller
             'password'       => Hash::make($request->password),
             'telephone'      => $request->telephone,
             'adresse'        => $request->adresse,
-            'code_postal'     => $request->code_postal,
+            'code_postal'    => $request->code_postal,
             'ville'          => $request->ville,
             'date_naissance' => $request->date_naissance,
         ]);
@@ -70,7 +70,7 @@ class ClientApiController extends Controller
             'email'          => 'required|email|unique:users,email,' . $id,
             'telephone'      => 'nullable|string|max:20',
             'adresse'        => 'nullable|string',
-            'code_postal'     => 'nullable|string|max:10',
+            'code_postal'    => 'nullable|string|max:10',
             'ville'          => 'nullable|string|max:100',
             'date_naissance' => 'nullable|date',
         ]);
@@ -81,7 +81,7 @@ class ClientApiController extends Controller
             'email'          => $request->email,
             'telephone'      => $request->telephone,
             'adresse'        => $request->adresse,
-            'code_postal'     => $request->code_postal,
+            'code_postal'    => $request->code_postal,
             'ville'          => $request->ville,
             'date_naissance' => $request->date_naissance,
         ]);
@@ -110,20 +110,20 @@ class ClientApiController extends Controller
     private function formatClient(User $u): array
     {
         return [
-            'id'             => $u->id,
-            'nom'            => $u->nom,
-            'prenom'         => $u->prenom,
-            'email'          => $u->email,
-            'telephone'      => $u->telephone ?? '—',
-            'adresse'        => $u->adresse ?? '—',
-            'code_postal'     => $u->code_postal ?? '—',
-            'ville'          => $u->ville ?? '—',
-            'date_naissance' => $u->date_naissance?->format('d/m/Y') ?? '—',
-            'date_inscription'=> $u->created_at->format('d/m/Y'),
-            'nb_contrats'    => $u->contrats_count ?? $u->contrats()->count(),
-            'club_actif'     => $u->clubMembre?->actif ?? false,
-            'niveau_club'    => $u->clubMembre?->niveau?->nom,
-            'points_club'    => $u->clubMembre?->points_total ?? 0,
+            'id'               => $u->id,
+            'nom'              => $u->nom,
+            'prenom'           => $u->prenom,
+            'email'            => $u->email,
+            'telephone'        => $u->telephone ?? '—',
+            'adresse'          => $u->adresse ?? '—',
+            'code_postal'      => $u->code_postal ?? '—',
+            'ville'            => $u->ville ?? '—',
+            'date_naissance'   => $u->date_naissance?->format('d/m/Y') ?? '—',
+            'date_inscription' => $u->created_at->format('d/m/Y'),
+            'nb_contrats'      => $u->contrats_count ?? $u->contrats()->count(),
+            'club_actif'       => $u->clubMembre?->actif ?? false,
+            'niveau_club'      => $u->clubMembre?->niveau?->nom,
+            'points_club'      => $u->clubMembre?->points_total ?? 0,
         ];
     }
 }
