@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('contrat_id')->nullable()->constrained('contrats')->onDelete('set null');
-            $table->integer('points'); // positif = gain, négatif = déduction
+            $table->integer('points');
             $table->string('motif');
             $table->timestamps();
         });
